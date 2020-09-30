@@ -1,12 +1,14 @@
 const fibonacci = (n) => {
+debugger;
+  const arrayFibonacci = [0, 1];
 
-  let arrayFibonacci = [1, 1];
-
-  for (let i = 0; i < n; i++) {
-    let count = arrayFibonacci[i] + arrayFibonacci[i + 1];
-    arrayFibonacci.push(count);
+  for (let i = 2; i <= n; i++) {
+    arrayFibonacci[i] = arrayFibonacci[i - 2] + arrayFibonacci[i - 1];
+    // let count = arrayFibonacci[i - 2] + arrayFibonacci[i - 1];
+    // arrayFibonacci.shift(count);
   }
-  arrayFibonacci.length = n;
+  // arrayFibonacci.length = n;
+  arrayFibonacci.shift(); /*Eliminar el primer elemento de un Array*/
   return arrayFibonacci;
 }
 
